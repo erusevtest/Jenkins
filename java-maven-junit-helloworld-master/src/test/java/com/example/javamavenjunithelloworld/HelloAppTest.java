@@ -40,7 +40,7 @@ public class HelloAppTest {
         System.exit(HelloApp.EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD);
     }
 
-    @Test
+    //@Test
     public void testHelloError() throws Exception {
         PowerMockito.mockStatic(System.class);
 
