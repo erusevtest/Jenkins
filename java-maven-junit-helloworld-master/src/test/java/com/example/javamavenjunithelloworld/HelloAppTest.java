@@ -34,7 +34,7 @@ public class HelloAppTest {
         HelloApp.main(args);
 
         // Did the program exit with the expected error code?
-        PowerMockito.verifyStatic(only());
+        PowerMockito.verifyStatic(null, only());
         System.exit(HelloApp.EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD);
     }
 
@@ -53,7 +53,7 @@ public class HelloAppTest {
         HelloApp.main(args);
 
         // Did the program exit with the expected error code?
-        PowerMockito.verifyStatic(only());
+        PowerMockito.verifyStatic(null, only());
         System.exit(HelloApp.EXIT_STATUS_HELLO_FAILED);
     }
 
