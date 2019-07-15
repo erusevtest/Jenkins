@@ -9,6 +9,8 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import static org.mockito.Mockito.*;
 import static org.powermock.api.mockito.PowerMockito.whenNew;
 
+import java.io.PrintStream;
+
 /**
  * Unit test for HelloApp.
  * <p/>
@@ -34,7 +36,7 @@ public class HelloAppTest {
         HelloApp.main(args);
 
         // Did the program exit with the expected error code?
-        PowerMockito.verifyStatic(null, only());
+        PowerMockito.verifyStatic(System.class, only());
         System.exit(HelloApp.EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD);
     }
 
@@ -53,7 +55,7 @@ public class HelloAppTest {
         HelloApp.main(args);
 
         // Did the program exit with the expected error code?
-        PowerMockito.verifyStatic(null, only());
+        PowerMockito.verifyStatic(System.class, only());
         System.exit(HelloApp.EXIT_STATUS_HELLO_FAILED);
     }
 
